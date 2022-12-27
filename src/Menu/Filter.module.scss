@@ -1,0 +1,146 @@
+@import "./../respons.scss";
+
+.filter{
+    display: flex;
+    margin-top: 20rem;
+    align-items: center;
+    width: 100%;
+    
+    justify-content: center;
+    flex-direction: column;
+    @include respons(medium){
+        margin-top: 15rem;
+        justify-items: start;
+    }
+    
+    
+    &__titre{
+        font-weight: 600;
+        text-transform: uppercase;
+        position: relative;
+        margin-right: auto;
+        font-family: mv boli;
+        font-size: 2rem;
+        line-height: 2rem;
+        &::before{
+            content: "";
+            height: 2px;
+            width: 94px;
+            background-color: orange;
+            position: absolute;
+            top: 22px;
+            left: 0;
+            border-radius: 0.8rem;
+            
+        }
+    }
+    &__pres{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+        padding: 6rem;
+        width: 100%;
+        margin-top: 20px;
+        overflow-x: scroll;
+
+
+        @include respons(medium){
+//             overflow-x: scroll;
+// /*             scroll-padding: 0 50%;
+//  */            scroll-snap-type: x mandatory;
+//  -webkit-overflow-scrolling: touch;
+//  scroll-snap-points-x: repeat(100vw);
+//  display: flex;
+scroll-snap-type: x mandatory;  
+-webkit-overflow-scrolling: touch;
+padding-right: 0px;
+overflow-x: scroll;
+            justify-content: start;
+            padding-left: 1rem;
+
+        }
+       
+        &-Card{
+            background-color: #f7f7f7;
+            min-width: 80px;
+            height: 9rem;  
+           box-shadow: 0 8px 8px rgba(0, 0, 0, 0.25);
+        display: flex;
+            flex-direction: column;
+            justify-content: center;
+            cursor: pointer;
+            align-items: center;
+            border-radius: 30px;
+            transition: all .2s;
+
+            @include respons(medium){
+                scroll-snap-align: start;
+            }
+            
+            &:active{
+                scale: 0.75;
+                transform: translateY(-20px);
+            }
+            &:hover{
+                background-color:rgba(215, 36, 36, 0.739);
+            }      
+            &_content{
+                width: 4rem;
+                height: 5rem;
+                border-radius: 50%;
+                font-size: 2rem;
+                background-color: red;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all .2s;
+                &-icon{
+                    color: rgba(68,64,60,.8);
+                }
+            }
+            &:hover > .filter__press-Card-content{
+                background-color:rgba(256,256,256,1);
+            }
+            &-p{
+                font-size: 1.4rem;
+                padding-top: 4px;
+                transition: all .2s ease-in;
+            }
+            &:hover > &-p{
+                color: #f7f7f7;
+            }
+
+        }
+    }
+    
+}
+//Card CONTENT
+.filter__press-Card_content{
+    width: 4rem;
+    height: 3rem;
+    font-size: 2rem;
+
+    border-radius: 50%;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s;
+    .filter__pres-Card:hover & {
+        background-color:rgba(256,256,256,1);
+    }
+}
+    //css syling DYNAMIC
+ .Card-valid{
+    background-color:rgba(215, 36, 36, 0.863);
+
+/*     color: #f7f7f7;
+ */} 
+.yes{
+    background-color:rgba(256,256,256,1);
+
+}
+.valid-p{
+    color: #f7f7f7;
+}

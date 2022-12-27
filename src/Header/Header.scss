@@ -1,0 +1,232 @@
+@import "./../respons.scss";
+.header{
+
+
+   
+    &__texte{
+        grid-column: 1/5;
+        margin-top:0px;
+        background-image: linear-gradient(rgba(#101d2c, .95), rgba(#101d2c, .95));
+        display: grid;
+        grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
+        grid-template-columns: minmax(min-content,max-content);
+        row-gap: 10px;
+
+        padding: 8rem;
+        padding-top: 4rem;
+        &::before{
+            content: "";
+            background: rgba(97, 87, 81, 0.69);
+            position: absolute;
+            left: 0;
+            top: 100px;
+            width: 30%;
+            height: 10%;
+            border-radius: 50%;
+            filter: blur(150px);
+            z-index: 10;
+            
+        }
+
+        justify-content: center;
+        @include respons(small) {
+            grid-column: 1/-1;
+            padding: 4rem;
+            grid-row: 2/3;
+        }
+
+       
+        &-h1{
+            color: #252525;
+            align-self: center;
+            background: -webkit-linear-gradient(left,#706969, #383838);
+            -webkit-background-clip: text;
+            font-size: 3rem;
+            -webkit-text-fill-color: transparent;
+        }
+        &-p{
+            font-size: 2rem;
+            color: #f7f7f7;
+        }
+        &-btn{
+            background-color: #c69963;
+            color: #fff;
+            border: none;
+            border-radius: 0;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            padding: 1rem 7.5rem;
+            align-self: end;
+            margin-left: 10px;
+            justify-self: start;
+            margin-top: 4rem;
+            cursor: pointer;
+            
+        }
+        &-win{
+            padding: 3rem 1rem;
+            margin-top: 0;
+            display: grid;
+            grid-template-columns: 1fr max-content 1fr;
+            align-items: center;
+            font-size: 2rem;
+            grid-column-gap: 1.5rem;
+
+            &::before,
+            &::after{
+                content: "";
+                height: 3px;
+                display: block;
+                background-color: #f7f7f7;
+            }
+        }
+        &-logos{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-column-gap: 3rem;
+            justify-items: center;
+            img{
+                max-width: 150%;
+                max-height: 7rem;
+                background-color: #101d2c;
+                color: #252525;
+                fill: #101d2c;
+                filter: blur(100%);
+                border-radius: 5rem;
+                background-image: none;
+            }
+        }
+        
+    }
+    &__photo{
+        grid-column: 5/-1;   
+        background-size: cover;
+        object-fit: cover;
+        display: grid;
+        grid-template-columns: repeat(2,minmax(min-content,max-content));
+        grid-template-rows: repeat(2,minmax(min-content,1fr)); 
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        width: 76%;
+        height:8%;     
+        padding-left: 10rem; 
+        padding-right: 1rem; 
+        @include respons(medium){
+            
+/*             padding-right: 16rem;
+ */
+        }
+        @include respons(small){
+            width: 53%;
+            
+        }
+
+        @include respons(small) {
+            grid-column: 1/-1;
+            margin:0 auto;
+
+            padding-left: 0rem;
+            padding-right: 0rem;   
+        }
+
+        @include respons(phone) {
+
+
+            padding-left: 32px;
+            padding-right: 32px;   
+        }
+        &::before{
+           /*  content: '';
+            background-image: url("./../img/bgfood.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 25% 100%; */
+/*             background-attachment: fixed;
+ */            z-index: -1;
+            width: 100%;
+            height: 90%;
+            position: absolute;
+            top: 0;
+            opacity: .89;
+            backdrop-filter: blur(20px);
+            right: 0;
+            @include respons(small){
+                height: 155%;
+            }
+            @include respons(phone){
+                height: 175%;
+            }
+            
+        }
+        &-card{
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+            font-family: sans-serif;
+            
+            text-align: center;
+            line-height: 1;
+            background-color: rgba(256,256,256,.4);
+            backdrop-filter: blur(4px);
+            justify-self: center;
+/*             backdrop-filter: grayscale(100%);
+            backdrop-filter: saturate(2); */
+            /*             backdrop-filter: brightness(1.1);
+ */  
+/*             max-width: 6%;
+ */           min-width: 190px;
+            max-height: 83%;
+            padding: 20px;
+            box-shadow: 0rem 2rem 5rem rgba(#000, .8);
+            @include respons(small){
+                height: 140%;
+            }
+            @include respons(phone){
+                min-width: 170px;
+            }
+           
+      
+
+
+
+            &-img{
+                width: 70%;
+                background-image: none;
+                object-fit: cover;
+                transform: translateY(-10px);
+                @include respons(small){
+                    width: 40%;
+                }
+              
+               
+            }
+            &-title{
+                font-size: 1.8rem; 
+                line-height: 2.2rem;
+                font-weight: 700;
+                margin-top: .25rem; /* 12px */
+                margin-bottom: 0.5rem; 
+                color: #1a202c;
+            }
+            &-id{
+                font-size: 1.5rem; 
+                line-height: 1.5rem; 
+                font-weight: 800;
+                color: #4a5568;
+            }
+            &-price{
+                font-size: 1.4rem; /* 14px */
+                line-height: 3.95rem; /* 20px */
+                margin-bottom: 2rem;
+
+                &-m{
+                    color: #c53030;
+                }
+            }
+
+        }
+
+    }
+    
+
+}

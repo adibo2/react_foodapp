@@ -1,0 +1,181 @@
+@import "./../respons.scss";
+.header__photo{
+    grid-column: 5/-1;   
+    background-size: cover;
+    background-image:linear-gradient(to bottom,rgba(22,22,22,.3) 0,rgba(22,22,22,.7) 75%,#161616 100%),url("./../img/bgfood.png");
+
+    background-repeat: no-repeat;
+   background-position: 25% 100%;
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+    // display: grid;
+    // // grid-template-columns: repeat(2,minmax(min-content,max-content));
+    // grid-template-columns: min-content max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+
+
+    gap: 1rem;
+    padding-left: 10rem; 
+    padding-top: 2rem;
+
+
+
+    padding-right: 1rem; 
+    @include respons(medium){
+        
+/*             padding-right: 16rem;
+*/
+    }
+    @include respons(small){
+        grid-column: 1/-1;
+        grid-row: 3/4;
+
+  
+        
+    }
+
+    @include respons(small) {
+        grid-column: 1/-1;
+        padding-left: 0rem;
+        width: 100%;
+        padding-right: 0rem;   
+    }
+    &-h1{
+        margin-top: 10rem;
+        font-size: 1.8rem;
+        color: #E6DADA;
+        font-family: monospace;
+       
+
+    }
+    &-grid{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(2,minmax(min-content,max-content));
+        gap: 2rem;
+        row-gap: 0rem;
+        align-content: start;
+        justify-content: center;
+        margin-bottom: 10px;
+
+      
+    }
+
+
+    &-card{
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 5px;
+        font-family: sans-serif;
+        
+        text-align: center;
+        line-height: 1;
+        margin-top: 5rem;
+        background-color: rgba(256,256,256,.4);
+        backdrop-filter: blur(4px);
+        justify-self: center;
+/*             backdrop-filter: grayscale(100%);
+        backdrop-filter: saturate(2); */
+        /*             backdrop-filter: brightness(1.1);
+*/  
+/*             max-width: 6%;
+*/      width: 180px;
+        max-height: 80%;
+        padding: 10px;
+        box-shadow: 0rem 2rem 5rem rgba(#000, .8);
+        display: grid;
+        grid-template-rows: 1fr min-content minmax(1rem, min-content);
+        justify-items: center;
+      
+
+        @include respons(small){
+            height: 140%;
+            margin-top: 0rem;
+        }
+        @include respons(phone){
+            min-width: 170px;
+        }
+       
+  
+
+
+
+        &-img{
+            width: 6.5rem;
+            
+            background-image: none;
+            object-fit: cover;
+            justify-self: center;
+            margin-top: 2rem;
+            align-self: start;
+            -webkit-filter: drop-shadow(5px 5px 5px #222);
+            @include respons(small){
+                width: 40%;
+            }
+          
+           
+        }
+        &-cart{
+            grid-row: 1/2;
+            align-self: start;
+            justify-self: end;
+     
+            background-color: #ED1C24;
+            border-radius: 100%;
+            width: 22px;
+            height: 22px;
+            margin-right:1px;
+            justify-self: end;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .3s ease-in;
+            &:hover{
+                cursor: pointer;
+                scale: .75;
+            }
+
+            &_icon{
+                display: block;
+                height: 3rem;
+                width: 2.5rem;
+                fill: #f7f7f7;              
+
+            }
+
+        }
+        &-title{
+            font-size: 1.7rem; 
+            line-height: 2.2rem;
+            font-weight: 700;
+            margin-top: .25rem; /* 12px */
+            margin-bottom: 0.5rem; 
+            
+            color: #1a202c;
+        }
+        &-id{
+            font-size: 1.3rem; 
+            line-height: 1.5rem; 
+            font-weight: 800;
+            padding-top: 1rem;
+            color: #515151;
+            justify-self: center;
+
+        }
+        &-price{
+            font-size: 1.4rem; /* 14px */
+            line-height: 3.95rem; /* 20px */
+            margin-bottom: 2rem;
+
+            &-m{
+                color: #c53030;
+            }
+        }
+
+    }
+
+}

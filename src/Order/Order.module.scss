@@ -1,0 +1,105 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+    margin-top: 19rem;
+    gap: 3rem;
+    // width: 90%;
+    // max-width: 90rem;
+    
+    margin: 3rem auto;
+    &__heading{
+        font-size: 2.4rem;
+        font-weight: bold;
+        background-image: linear-gradient(to right,#73c8a9,#373b44);
+        -webkit-background-clip: text;
+        color: transparent;
+
+
+    }
+    &__details{
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        gap: 3rem;
+        img{
+            border-radius: 50%;
+            width: 10%;
+        }
+        
+    }
+    &__details>div{
+        display:flex;
+        justify-content: space-between;
+    }
+    &__details>div>span{
+        font-size: 1.6rem;
+        font-weight: bold;
+
+    }
+    &__statusContainer{
+        margin-top: 5rem;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+        gap:10rem
+    }
+    &__status{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6rem;
+        position: relative;
+        &>*{
+            fill: olivedrab;
+        }
+        &>span{
+            font-size: 1.3rem;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #252525;
+
+        }
+        &-btn{
+            width: max-content;
+            background-color: #52c234;
+            padding: 1.2rem;
+            font-size: 1.3rem;
+            border-radius: 1rem;
+            color: black;
+            transition: all .8s;
+        }
+
+    }
+    &__spinner{
+        position: absolute;
+        left: -2.3rem;
+        top: -1.8rem;
+        width: 6rem;
+
+    }
+}
+.bump{
+    display:none;
+}
+.btnorder{
+    margin-top: 5rem;
+    margin-left: 3rem;border: none;
+    outline: none;
+    background-color: #4B1248;
+    color: #f7f7f7;
+    padding: 1rem 4rem;
+    cursor: pointer;
+    border-radius: 30rem;
+    transition: all .5s;
+    &:hover{
+        transform: translateY(-8px);
+        box-shadow: 0px 5px 10px rgba(0,0,0,0.5);
+    }
+    &:active{
+        transform: translateY(8px);}
+}

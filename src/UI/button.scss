@@ -1,0 +1,81 @@
+@import "./../respons.scss";
+.btn {
+    padding: 15px 40px;
+    width: 25%;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+    position: relative;
+    font-size: 1.6rem;
+    font-weight: 700;
+    transform: translateY(-10px);
+    background-color: #252525;
+    display: flex;
+    justify-content: center;
+    border: none;
+
+    cursor: pointer;
+    @include respons(medium){
+        font-size: 1.2rem;
+        padding: 10px 30px;
+
+        
+    }
+    @include respons(small){
+        width: 40%;
+
+        
+    }
+    @include respons(phone){
+        width: 60%;
+        font-size: 1rem;
+
+
+        
+    }
+    
+    &:hover {
+        transform: translateY(-18px);
+        box-shadow: 0 20px 30px rgba(0, 0, 0, .2);
+    }
+    &:active{
+        transform: translateY(-13px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+    }
+    &-white {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #f7f7f7;
+        background-color: #252525;
+
+    
+    }
+    &::after {
+        content: "";
+        display: inline-block;
+        /* after a cote du parent*/
+        height: 100%;
+        width: 100%;
+        border-radius: 100px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        
+        transition: all .3s ease-out;
+    
+    }
+    &-white::after {
+        background-color: rgb(35, 177, 87);
+        color: #f7f7f7;
+    }
+    &:hover::after {
+        transform: scaleX(1.1) scaleY(1.2);
+        opacity: 0;
+    }
+
+    
+
+
+
+}

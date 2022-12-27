@@ -1,0 +1,71 @@
+.ad-textbox {
+    position: relative;
+    max-width: 100px;
+  }
+  
+  .ad-textbox > .underline {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 150%;
+    height: 2px;
+    background: #389e1c;
+    transform: scaleX(0);
+    transition: 0.35s;
+  }
+  
+  .ad-textbox > span,
+  .ad-textbox > label {
+    position: absolute;
+    pointer-events: none;
+    translate: -90% -10%;
+    // color: rgba(255, 255, 255, 0.5);
+    color: #2e2a33;
+    transition: 0.35s;
+  }
+  
+  .ad-textbox > span {
+    top: 20%;
+    left: 0;
+  }
+  
+  .ad-textbox > label {
+    top: 50%;
+    left: 34px;
+    font-size: 1.8rem;
+    white-space: nowrap;
+    font-family: "Euclid Circular A";
+  }
+  
+  .ad-textbox > input {
+    display: block;
+    height: 60px;
+    max-width: 150px;
+    padding-top: 40px;
+    padding-left: 7px;
+    background: transparent;
+    border: 0;
+    outline: none;
+    border-bottom: 2px solid #2e2a33;
+/*     color: rgba(255, 255, 255, 0.96);
+ */    color: #2e2a33;
+    font-family: "Euclid Circular A";
+    font-size: 16px;
+  }
+  
+  .ad-textbox > :is(input:focus, input.has-value) ~ span {
+    color: rgba(255, 255, 255, 0.96);
+  }
+  
+  .ad-textbox > :is(input:focus, input.has-value) ~ label {
+    color: #389e1c;
+  }
+  
+  .ad-textbox > :is(input:focus, input.has-value) ~ label {
+    translate: -42px -24px;
+    scale: 0.875;
+  }
+  
+  .ad-textbox > :is(input:focus, input.has-value) ~ .underline {
+    transform: scaleX(1);
+  }

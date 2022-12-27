@@ -1,0 +1,313 @@
+@import "./../respons.scss";
+
+.Navbar{
+    grid-column: 1/-1;
+    // position: fixed;
+/*     grid-row: 1/2;
+ */
+/*     display: flex;
+    justify-content: space-between;
+    align-items: center; */
+/*     background-color: #252525;
+ *//*     padding: 15px;
+ */    
+/*  width: 10vw;
+ height: 150px; */
+    z-index: 60;
+    grid-row: 1/2;
+    
+    background: rgba(0, 0, 0, 0.995);
+
+/*     position: fixed;
+ */    @include respons(small){
+        display: none;
+
+    }
+    &-fix{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        width: 100vw;
+         
+      
+ backdrop-filter: blur(4px);
+ background: rgba(0, 0, 0, 0.695);
+        height: 00%;
+        grid-column: 1/-1;
+        height: 5%;
+        font-size: 1.8rem;
+    z-index: 60;
+/*     background-color: aquamarine;
+ */
+        padding: 35px;
+        padding-top: 30px;
+        padding-right: 0px;
+        transition: all .5s ease-in-out;
+        &:hover{
+            background: rgba(0, 0, 0, 0.995);
+
+
+        }
+        @include respons(small){
+            display: none;
+    
+        }
+        
+
+    }
+
+
+    &__logo{
+        font-size: 2rem;
+        color: #f7f7f7;
+        width: 20px;
+        padding-left: 10px;
+        @include respons(small){
+            padding-right: 40px;
+        }
+    }
+    &__items{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+        margin-right: 50px;
+        cursor: pointer;
+        
+
+    }
+    &__item{
+        list-style: none;
+        display: inline-block;
+        text-decoration: none;
+        opacity: .5;
+        color: #dff2f2;
+        position: relative;
+        cursor: pointer;
+        &:hover{
+            color: #dff2f2;
+            opacity: 1;
+
+        }
+        & .active{
+            
+            border-bottom:1.2px solid #7ed56f;
+            // background-color: transparent;
+            padding: 0px;
+            opacity: 1;
+            
+        }
+        @include respons(small){
+            color: #515151;
+            padding: 2rem;
+            font-weight: 500;
+            font-size: 1.8rem;
+        }
+        
+        &-drop{
+            position: relative;
+            &-login{
+                width: 12rem;
+                position: absolute;
+                top: 12;
+                right: -10px;
+                background-color: rgb(249,250,251);;
+                box-shadow: 0 20px 25px -5px rgb(0 ,0,0 / 0.1), 0 8px 10px -6px rgb(0 ,0 ,0 / 0.1);
+                display: flex;
+                flex-direction: column;
+                padding: 1rem;
+                @include respons(small){
+                    padding: 0rem;
+                }
+                p{
+                    font-size: 1.3rem;
+                    display: flex;
+                    align-items: center;
+                    gap: .7rem;
+                    padding: 1rem;
+                    color: #252525;
+                    transition: all .3s ease-in-out;
+                    @include respons(small){
+                        gap:0rem
+                    }
+                    &:hover{
+                        background-color:rgb(203,213,225);;
+                    }
+                }
+            }
+        }
+        // &:hover{
+        //     color: #dff2f2;
+        //     opacity: 1;
+        // }
+        &-amount{
+            background-color: red;
+            color: #f7f7f7;
+            border-radius: 40%;
+            width: 17px;
+            height:20px;
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+           
+            &-number{
+                font-size: 1.25rem;
+                line-height: 1rem;
+
+            }
+        }
+        &::before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: currentColor;
+            bottom: 3px;
+            left: 0;
+            transform: scale3d(0, 1, 1);
+            transform-origin: right;
+            transition: transform .5s ease-in-out;
+        }
+        &.active{
+            transform: scale3d(1, 1, 1);
+
+        }
+        &:hover::before{
+            transform: scale3d(1, 1, 1);
+            transform-origin: left;
+        }
+        &-login{
+            width: 3rem;
+            min-width: 2.5rem;
+            height: 2.8rem;
+            min-height: 2.5rem;
+            border-radius: 100%;
+            transform: translateX(4px);
+            @include respons(small){
+                min-width: 4.5rem;
+                height: 4.8rem;
+                margin-right: 2rem;
+
+
+            }
+        }
+    }
+}
+
+
+ @include respons(largex){
+    .Navbar__mobile{
+        display: none;
+    }
+
+ }
+ @include respons(large){
+    .Navbar__mobile{
+        display: none;
+    }
+
+ }
+ @include respons(small){
+    // .Navbar__mobile{
+    //     display: none;
+    // }
+
+ } 
+@include respons(small){
+    .Navbar__mobile{
+        grid-column: 1/-1;
+        /*     display: flex;
+            justify-content: space-between;
+            align-items: center; */
+        /*     background-color: #252525;
+         *//*     padding: 15px;
+         */    font-size: 1.8rem;
+             display: flex;
+             width: 100vw;
+             grid-row: 1/2;
+
+            z-index: 60;
+            &-fix{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: fixed;
+                background-color: #252525;
+                width: 100%;
+                padding: 5px;
+            }
+            &-amount{
+                background-color: red;
+                color: #f7f7f7;
+                border-radius: 40%;
+                width: 17px;
+                height:14px;
+                position: absolute;
+                top: -10px;
+                right: -10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                &-number{
+                    font-size: 1.25rem;
+                    line-height: 1rem;
+    
+                }
+            }
+            &-cart{
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+               
+            }
+            &__amount{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                top: -.5rem;
+                right: -.5rem;
+                width: 5px;
+                height: 5px;
+            }
+            &-items{
+                display: flex;
+                flex-direction: column;
+            }
+            
+               
+        }
+
+    
+        
+
+}
+.bump {
+    animation: bump 300ms ease-out;
+  }
+
+@keyframes bump {
+    0% {
+      transform: scale(1);
+    }
+    10% {
+      transform: scale(0.9);
+    }
+    30% {
+      transform: scale(1.1);
+    }
+    50% {
+      transform: scale(1.15);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  

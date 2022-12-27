@@ -1,0 +1,48 @@
+@import "./index.scss";
+@import "./respons.scss";
+.container{
+    display: grid;
+    grid-template-rows:5.5vh 85vh 40vw repeat(3, min-content);
+/*     grid-template-columns:  minmax(6rem,1fr) repeat(8,minmax(min-content, 1fr)) minmax(6rem,1fr);
+ */    
+
+ grid-template-columns:  minmax(6rem, 1fr) repeat(8, minmax(min-content, 15rem)) minmax(6rem, 1fr);
+ row-gap: 0rem;
+ background-image: url("./img/bg1.jpg");
+
+/*     @supports (-moz-appearance: none){
+      grid-template-columns:  minmax(6rem,1fr) repeat(8,minmax(min-content, 1fr)) minmax(6rem,1fr);
+    }
+ */
+    // &>*{
+    //   font-size: 1.8rem;
+
+    // }
+
+  //   @include respons(medium) {
+  //     display: grid;
+  // /*     grid-template-columns:  minmax(6rem,1fr) repeat(8,minmax(min-content, 1fr)) minmax(6rem,1fr);
+  //  */    
+
+  //  grid-template-columns: minmax(6rem, 1fr) repeat(8, minmax(min-content, 15rem)) minmax(6rem, 1fr);
+
+  //   }
+    @include respons(small){
+        display: grid;
+        // grid-template-rows:4vh calc(100vh - 24rem); 
+        grid-template-rows:6rem calc(100vh - 6rem); 
+
+        //new line realtors and header all page //kml b min-content ola automatique placement
+      } 
+
+}
+/* .headerbg{
+  grid-column: 1/-1;
+  background-image: url("./img/bgfood.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 25% 100%;
+    width: 100%;
+
+} */
+
